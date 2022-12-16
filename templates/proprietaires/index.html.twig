@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProprietairesController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Proprietaire</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th></th>
+            </tr>
+            {% for c in proprietaires %}
+                <tr>
+                    <td>{{ c.nom }}</td>
+                    <td>{{ c.prenom }}</td>
+                    <td>
+                        <a href="{{path("proprietaire_modifier",{"id":c.id})}}" class="btn btn-danger">Modifier</a>
+                        <a href="{{path("proprietaire_supprimer",{"id":c.id})}}" class="btn btn-warning">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

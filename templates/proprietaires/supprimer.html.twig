@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Etes-vous sur de vouloir supprimer ce Proprietaire</h1>
+        {{ form(formulaire) }}
+        <a href="{{ path("proprietaire_afficher") }}" class="btn btn-warning">Annuler</a>
+    </div>
+{% endblock %}

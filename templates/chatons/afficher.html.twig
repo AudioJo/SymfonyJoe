@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+    <h2>Chatons</h2>
+    <div class="flex-wrap" style="width: 100%; display: flex; flex-direction: row;">
+        {% for c in chatons %}
+            <div class="col col-3">
+                <div class="card m-1"><img src="{{ c.photo }}" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            {{ c.Nom }}
+                        </h3>
+                        <a href="{{ path("chatons_modifier",{"id":c.id}) }}" class="d-inline p-1 btn btn-danger">Modifier Chatons</a>
+                        <a href="{{ path("chatons_supprimer",{"id":c.id}) }}" class="d-inline p-1 btn btn-warning">Supprimer Chatons</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <a href="{{ path("chatons_ajouter") }}" class="btn btn-warning">Ajouter Chatons</a>
+{% endblock %}
+
+

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>modifier la catégorie <i>{{ categorie.titre }}</i></h1>
+        {{ form(formulaire) }}
+    </div>
+{% endblock %}
